@@ -16,7 +16,9 @@ btnConnect.addEventListener('click', function(e) {
     console.log(brokerAdress);
     client = mqtt.connect("ws://broker.hivemq.com:8000/mqtt");
     client.on("connect", function(){
-    conRes.value= "Successfully connected";
+      conRes.value= "Successfully connected";
+      conRes.style.backgroundColor='rgb(0, 204, 0)';
+      conRes.style.color = 'yellow';
     console.log("Successfully connected");
 })
 })
@@ -51,6 +53,8 @@ btnDisConnect.addEventListener('click', function() {
   console.log(client.end());
   client.end();
   conRes.value= "Successfully Disconnected";
+  conRes.style.backgroundColor='rgb(204, 0, 0)';
+      conRes.style.color = 'yellow';
 })
 
 

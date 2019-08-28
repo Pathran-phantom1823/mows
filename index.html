@@ -15,34 +15,32 @@
   </header>
   <div class="container">
     <div class="jumbotron" id="subscribecont">
-              <header>
-                <h1>Subscribe</h1>
-              </header>
-              <label for="subscribetopic">Subscription</label>
-              <input type="text" id="subscribetopic" placeholder="Enter your Topic"><br>
+              <header style="background-color:cyan  ">
+                  <center><h1>Subscribe</h1>
+              </header><br>
+              <input type="text" id="subscribetopic" class='form-control' placeholder="Enter your Topic"><br>
               <button type="button" class="btn btn-primary" id="subscribe">Subscribe</button>
               <button type="button" class="btn btn-warning">Unsubscribe</button>
      </div>           
   </div>  
   <div class="container">
     <div class="jumbotron" id="publishcont">
-                <header>
-                  <h1>Publish</h1>
-                </header>
-                <label for="subscribetopic">Publishing</label>
-                <input type="text" id="topic" placeholder="Enter your Topic"><br>
-                <input type="text" id="payload" placeholder="Enter your Payload"><br>
+                <header style="background-color:#33d6ff">
+                    <center><h1>Publish</h1>
+                </header><br>
+                <input type="text" id="topic" class='form-control' placeholder="Enter your Topic"><br>
+                <input type="text" id="payload" class='form-control' placeholder="Enter your Payload"><br>
                 <hr>
                 <button type="button" class="btn btn-info" id= "publish">Publish</button>
     </div>
   </div>
   <div class="container">
-      <div class="jumbotron">
-              <header>
-                <h1>Broker</h1>
-              </header>
-              <input type="text" id="broker" value="ws://broker.hivemq.com:8000/mqtt"><br>
-              <input type="text" id="connectresult" disabled><br>
+      <div class="jumbotron" id="brokercont">
+              <header style="background-color:#33ffff">
+                <center><h1>-Broker-</h1></center>
+              </header><br>
+              <input type="text" id="broker" class='form-control' value="ws://broker.hivemq.com:8000/mqtt"><br>
+              <input type="text" id="connectresult" class='form-control' disabled><br>
               <button type="button" class="btn btn-primary" id="connect">Connect</button>
               <button type="button" class="btn btn-danger" id="disconnect">Disconnect</button><br>
   

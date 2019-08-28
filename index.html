@@ -1,11 +1,77 @@
-<html>
+<html lang="en"
 <head>
   <title>mows</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href="style.css">
 </head>
 <body>
-  <h1>MQTT</h1>
-  <p>My MQTT Web App</p>
+  <header id="head">
+      <center><h1>MQTT on Websocket</h1></center>
+  </header>
+  <div class="container">
+    <div class="jumbotron" id="subscribecont">
+              <header>
+                <h1>Subscribe</h1>
+              </header>
+              <label for="subscribetopic">Subscription</label>
+              <input type="text" id="subscribetopic" placeholder="Enter your Topic"><br>
+              <button type="button" class="btn btn-primary" id="subscribe">Subscribe</button>
+              <button type="button" class="btn btn-warning">Unsubscribe</button>
+     </div>           
+  </div>  
+  <div class="container">
+    <div class="jumbotron" id="publishcont">
+                <header>
+                  <h1>Publish</h1>
+                </header>
+                <label for="subscribetopic">Publishing</label>
+                <input type="text" id="topic" placeholder="Enter your Topic"><br>
+                <input type="text" id="payload" placeholder="Enter your Payload"><br>
+                <hr>
+                <button type="button" class="btn btn-info" id= "publish">Publish</button>
+    </div>
+  </div>
+  <div class="container">
+      <div class="jumbotron">
+              <header>
+                <h1>Broker</h1>
+              </header>
+              <input type="text" id="broker" value="ws://broker.hivemq.com:8000/mqtt"><br>
+              <input type="text" id="connectresult" disabled><br>
+              <button type="button" class="btn btn-primary" id="connect">Connect</button>
+              <button type="button" class="btn btn-danger" id="disconnect">Disconnect</button><br>
+  
+              <table>
+                  <thead>
+                      <tr>
+                        <th id="topictr">Topic</th>
+                        <th id="payloadtr">Payload</th>
+                        <th id="timestamp">Time Stamp</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+  
+                    </tbody>
+              </table>
+      </div>
+  </div>
+  
 </body>
 <script src="scripts/browserMqtt.js"></script>
 <script src="scripts/controller.js"></script>
 </html>
+
+
+
+<!-- <button type="button" class="btn btn-primary" id="connect">Connect</button>
+  <button type="button" class="btn btn-info" id= "publish">Publish</button>
+  <button type ="button" class="btn btn-warning" id="subscribe">Subscribe</button>
+  <input type="text" id="result" disabled>
+  <input type="text" id="connectresult" disabled>
+  <input type="text" id="payload">
+  <input type="text" id="topic"> -->

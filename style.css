@@ -43,3 +43,6 @@ tr:hover {background-color:rgba(91, 224, 245,0.4);}
     border-style: inset;
     background-color: rgba(255, 255, 255, 0.4);
 }
+#payload{
+    text-overflow: ellipsis;
+}

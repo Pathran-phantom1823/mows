@@ -5,7 +5,10 @@ var btnSubscribe = document.getElementById('subscribe');
 var btnUnSubscribe = document.getElementById('unsubscribe');
 // var result = document.getElementById('result');
 var conRes = document.getElementById('connectresult');
-var topicinput = document.getElementById('topic').value
+// var topic= document.getElementById('topic').value
+// var payload = document.getElementById('payload').value;
+var topic;
+var payload;
 var timestamp = new Date()
 var data;
 
@@ -28,22 +31,22 @@ btnConnect.addEventListener('click', function(e) {
 
 btnPublish.addEventListener('click',function(e){
       e.preventDefault();
-      var payload = document.getElementById('payload').value;
+      payload = document.getElementById('payload').value;
       topic = document.getElementById('topic').value
       console.log(topic)
-      client.on("message", function () {
+      client.on("message", function (topic, payload) {
       data = "<tr><td>"+topic+"</td>"+
             "<td>"+payload+"</td>"+
             "<td>"+timestamp+"</td>"+
           "</tr>"
-          $('table tbody').append(data).style.textOverflow = 'ellipsis';
+          $('table tbody').append(data);
       })
             client.publish(topic,payload)
 })
 
 btnSubscribe.addEventListener('click',function(e) {
       e.preventDefault();
-      var topic = document.getElementById('topic').value
+      topic = document.getElementById('topic').value
       console.log(topic)
       client.subscribe(topic)
 

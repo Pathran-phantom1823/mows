@@ -35,11 +35,19 @@ btnPublish.addEventListener('click',function(e){
       topic = document.getElementById('topic').value
       console.log(topic)
       client.on("message", function (topic, payload) {
-      data = "<tr><td>"+topic+"</td>"+
-            "<td>"+payload+"</td>"+
-            "<td>"+timestamp+"</td>"+
-          "</tr>"
-          $('table tbody').append(data);
+            var table = document.getElementById('tbody');
+            var row = table.insertRow(0);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            cell1.innerHTML = topic;
+            cell2.innerHTML = payload;
+            cell3.innerHTML = timestamp;
+      // data = "<tr><td>"+topic+"</td>"+
+      //       "<td>"+payload+"</td>"+
+      //       "<td>"+timestamp+"</td>"+
+      //     "</tr>"
+      //     $('table tbody').append(data);
       })
             client.publish(topic,payload)
 })

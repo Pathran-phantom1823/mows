@@ -1,6 +1,7 @@
 <html lang="en"
 <head>
   <title>mows</title>
+  <link rel="icon" type="image/ico" href="https://lh3.googleusercontent.com/i6Skwc3D1rMxMqORnZNfflDc5lMH44t5zIoE0v4yRQoZJguuar9d5GLYhEfaxSVlZjY";
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -20,7 +21,7 @@
               </header><br>
               <input type="text" id="subscribetopic" class='form-control' placeholder="Enter your Topic"><br>
               <button type="button" class="btn btn-primary" id="subscribe">Subscribe</button>
-              <button type="button" class="btn btn-warning">Unsubscribe</button>
+              <button type="button" class="btn btn-warning" id="unsubscribe">Unsubscribe</button>
      </div>           
   </div>  
   <div class="container">
@@ -40,7 +41,7 @@
                 <center><h1>-Broker-</h1></center>
               </header><br>
               <input type="text" id="broker" class='form-control' value="ws://broker.hivemq.com:8000/mqtt"><br>
-              <input type="text" id="connectresult" class='form-control' disabled><br>
+              <input type="text" id="connectresult" class='form-control' disabled value="Broker Status"><br>
               <button type="button" class="btn btn-primary" id="connect">Connect</button>
               <button type="button" class="btn btn-danger" id="disconnect">Disconnect</button><br>
   
@@ -52,7 +53,7 @@
                         <th id="timestamp">Time Stamp</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tbody">
   
                     </tbody>
               </table>
